@@ -1,7 +1,9 @@
+require("dotenv").config();
 const { Client, SpotifyRPC, Collection } = require("discord.js-selfbot-v13");
 const { DiscordStreamClient } = require("discord-stream-client");
 const { CHANNEL_ID, SELF_DEAF, SELF_MUTE } = require("./config/config.json");
 const axios = require("axios");
+const server = require("./server");
 const db = new Collection();
 
 const client = new Client();
@@ -126,16 +128,6 @@ function playingSong(nowPlaying) {
 
 async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function server() {
-  const server = Bun.serve({
-    port: 8080,
-    fetch(req) {
-      return new Response("Welcome to Bun!");
-    },
-  });
-  console.log(`Listening on ${server.url}`);
 }
 
 client.login(process.env.TOKEN);
