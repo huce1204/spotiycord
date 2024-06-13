@@ -3,6 +3,7 @@ const { Client, SpotifyRPC, Collection } = require("discord.js-selfbot-v13");
 const { DiscordStreamClient } = require("discord-stream-client");
 const { CHANNEL_ID, SELF_DEAF, SELF_MUTE } = require("./config/config.json");
 const axios = require("axios");
+const fs = require("fs");
 const server = require("./server");
 const db = new Collection();
 
@@ -42,7 +43,7 @@ client.on("messageCreate", async (message) => {
     const { artists, name, album, id, duration_ms } = track.data;
     let songData = {
       large_image: getSongImage(album.images[0].url),
-      large_text: name,
+      album_name: album.name,
       artists: artists.map((artist) => artist.name).join(", "),
       song_name: name,
       song_id: id,
@@ -55,7 +56,10 @@ client.on("messageCreate", async (message) => {
     if (!playlist) playlist = [];
     if (!playlist.find((song) => song.song_id === songData.song_id)) {
       playlist.push(songData);
-      Bun.write("./config/playlist.json", JSON.stringify(playlist, null, 2));
+      fs.writeFileSync(
+        "./config/playlist.json",
+        JSON.stringify(playlist, null, 2)
+      );
     }
   }
 });
@@ -91,7 +95,9 @@ async function getSpotifyToken() {
 }
 
 async function musicPlayer() {
-  let current_playlist = require("./config/playlist.json");
+  let current_playlist = JSON.parse(
+    fs.readFileSync("./config/playlist.json", "utf-8")
+  );
   if (!current_playlist) return;
   while (true) {
     let isPlaying = db.get("isPlaying");
@@ -101,7 +107,7 @@ async function musicPlayer() {
     }
     if (current_playlist.length === 0) {
       current_playlist = JSON.parse(
-        await Bun.file("./config/playlist.json").text()
+        fs.readFileSync("./config/playlist.json", "utf-8")
       );
     }
     let nowPlaying = current_playlist.shift();
@@ -114,7 +120,7 @@ async function musicPlayer() {
 function playingSong(nowPlaying) {
   const spotify = new SpotifyRPC(client)
     .setAssetsLargeImage(nowPlaying.large_image) // Image ID
-    .setAssetsLargeText(nowPlaying.large_text) // Album Name
+    .setAssetsLargeText(nowPlaying.album_name) // Album Name
     .setState(nowPlaying.artists) // Artists
     .setDetails(nowPlaying.song_name) // Song name
     .setStartTimestamp(Date.now())

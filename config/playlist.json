@@ -1,31 +1,7 @@
 [
   {
-    "large_image": "ab67616d0000b2739db19af2cb7e16517377332b",
-    "large_text": "Hướng Dương",
-    "artists": "Thắng",
-    "song_name": "Hướng Dương",
-    "song_id": "6VvFEO2TRnAm3AIjItNSuU",
-    "duration": 208805,
-    "album_id": "0iqF1fTyko37NzqyMf0OW2",
-    "artists_id": [
-      "1oD9fKbb7qQ2nhn9JJC24F"
-    ]
-  },
-  {
-    "large_image": "ab67616d0000b273c04fd477fe3d96d36e6d4904",
-    "large_text": "Chết Trong Em",
-    "artists": "Thịnh Suy",
-    "song_name": "Chết Trong Em",
-    "song_id": "1dUmmBh2nw8XzEI3au0uFs",
-    "duration": 256663,
-    "album_id": "5l7m3Ck0FMb0nDgzZfOBr3",
-    "artists_id": [
-      "2xK6qcvfXuFFbU0NL95aeo"
-    ]
-  },
-  {
     "large_image": "ab67616d0000b273b4262def1aaeb361c9ee55b0",
-    "large_text": "Mưa Giữa Bài",
+    "album_name": "Giấy Trắng",
     "artists": "Thắng, NÂN",
     "song_name": "Mưa Giữa Bài",
     "song_id": "37z9493qxR7KdUEjrxoUFO",
@@ -37,8 +13,32 @@
     ]
   },
   {
+    "large_image": "ab67616d0000b2739db19af2cb7e16517377332b",
+    "album_name": "Hướng Dương",
+    "artists": "Thắng",
+    "song_name": "Hướng Dương",
+    "song_id": "6VvFEO2TRnAm3AIjItNSuU",
+    "duration": 208805,
+    "album_id": "0iqF1fTyko37NzqyMf0OW2",
+    "artists_id": [
+      "1oD9fKbb7qQ2nhn9JJC24F"
+    ]
+  },
+  {
     "large_image": "ab67616d0000b273c04fd477fe3d96d36e6d4904",
-    "large_text": "Thay Doi",
+    "album_name": "Door To Nowhere",
+    "artists": "Thịnh Suy",
+    "song_name": "Where Are You?",
+    "song_id": "036YCmPwSdPT1Osc0zMPcn",
+    "duration": 130909,
+    "album_id": "5l7m3Ck0FMb0nDgzZfOBr3",
+    "artists_id": [
+      "2xK6qcvfXuFFbU0NL95aeo"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b273c04fd477fe3d96d36e6d4904",
+    "album_name": "Door To Nowhere",
     "artists": "Thịnh Suy",
     "song_name": "Thay Doi",
     "song_id": "7nmpSarD95GZjdlzIpSKZR",
@@ -49,8 +49,142 @@
     ]
   },
   {
+    "large_image": "ab67616d0000b273c04fd477fe3d96d36e6d4904",
+    "album_name": "Door To Nowhere",
+    "artists": "Thịnh Suy",
+    "song_name": "Chết Trong Em",
+    "song_id": "1dUmmBh2nw8XzEI3au0uFs",
+    "duration": 256663,
+    "album_id": "5l7m3Ck0FMb0nDgzZfOBr3",
+    "artists_id": [
+      "2xK6qcvfXuFFbU0NL95aeo"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b273fa201fc6fbffdd089791821a",
+    "album_name": "Cái Đầu Tiên",
+    "artists": "Thắng",
+    "song_name": "Mất Thời Gian",
+    "song_id": "7jFHUsErqyXjIvyxzBKhf2",
+    "duration": 200393,
+    "album_id": "5jDZKqgoVRbob6A3omYTG5",
+    "artists_id": [
+      "1oD9fKbb7qQ2nhn9JJC24F"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b273fa201fc6fbffdd089791821a",
+    "album_name": "Cái Đầu Tiên",
+    "artists": "Thắng",
+    "song_name": "Xin Lỗi",
+    "song_id": "1K3CXUYKhLYN7koLW5WQjX",
+    "duration": 127114,
+    "album_id": "5jDZKqgoVRbob6A3omYTG5",
+    "artists_id": [
+      "1oD9fKbb7qQ2nhn9JJC24F"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b273fa201fc6fbffdd089791821a",
+    "album_name": "Cái Đầu Tiên",
+    "artists": "Thắng, Limebócx",
+    "song_name": "Phải Lòng",
+    "song_id": "03ZqOfQjiFJ0CaoATCMxlU",
+    "duration": 261987,
+    "album_id": "5jDZKqgoVRbob6A3omYTG5",
+    "artists_id": [
+      "1oD9fKbb7qQ2nhn9JJC24F",
+      "2l0cdSl2y1u8TuqyO0X5Rf"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
+    "album_name": "Gieo",
+    "artists": "Ngọt, Mạc Mai Sương",
+    "song_name": "Đá tan",
+    "song_id": "6Wi18yv3aoO0ZF4uulguof",
+    "duration": 202166,
+    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI",
+      "7fMznGrNJs6H2kZbiqDPgE"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
+    "album_name": "Gieo",
+    "artists": "Ngọt",
+    "song_name": "Thấy Chưa",
+    "song_id": "4r7hIDwLsasMfj6nk2Wrib",
+    "duration": 232204,
+    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
+    "album_name": "Gieo",
+    "artists": "Ngọt",
+    "song_name": "Em Trong Đầu",
+    "song_id": "0ON38MgDpAMcRC9ULx7NOf",
+    "duration": 198222,
+    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2733ab401869655adcf234c0912",
+    "album_name": "Ng'bthg",
+    "artists": "Ngọt",
+    "song_name": "Cho",
+    "song_id": "54w3CUwFmj02KNZMuK1Cwn",
+    "duration": 190600,
+    "album_id": "4BwnV3YdCtxn8ydFVrstbI",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
+    "album_name": "Gieo",
+    "artists": "Ngọt",
+    "song_name": "Mấy Khi",
+    "song_id": "1gWYdMleZCQUUPSDL8uumT",
+    "duration": 177050,
+    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b2733ab401869655adcf234c0912",
+    "album_name": "Ng'bthg",
+    "artists": "Ngọt",
+    "song_name": "Kho Báu",
+    "song_id": "5LJNzbA1KfhQufbYMn0HJu",
+    "duration": 219320,
+    "album_id": "4BwnV3YdCtxn8ydFVrstbI",
+    "artists_id": [
+      "0V2DfUrZvBuUReS1LFo5ZI"
+    ]
+  },
+  {
+    "large_image": "ab67616d0000b27386e9c26b8567ddbc7adfacac",
+    "album_name": "Để Nó Đến",
+    "artists": "Thắng",
+    "song_name": "Để Nó Đến",
+    "song_id": "6mg6biMH1unKldegMb84SB",
+    "duration": 263225,
+    "album_id": "4i8YeSRnK4jfQ1WCFPzTDV",
+    "artists_id": [
+      "1oD9fKbb7qQ2nhn9JJC24F"
+    ]
+  },
+  {
     "large_image": "ab67616d0000b273d888433c9ebc10a6fd994962",
-    "large_text": "03 Hay Là",
+    "album_name": "Suýt 1",
     "artists": "Ngọt",
     "song_name": "03 Hay Là",
     "song_id": "6yLbighkE0kn1OH9zd4aBi",
@@ -61,27 +195,28 @@
     ]
   },
   {
-    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
-    "large_text": "Em Trang Trí",
+    "large_image": "ab67616d0000b273d888433c9ebc10a6fd994962",
+    "album_name": "Suýt 1",
     "artists": "Ngọt",
-    "song_name": "Em Trang Trí",
-    "song_id": "2dXH1lY55KCIvvrA6tVG3A",
-    "duration": 165868,
-    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "song_name": "01 Chuyện Dở Dang",
+    "song_id": "3vWCRttEOSRmXZs8jfAPSX",
+    "duration": 211777,
+    "album_id": "5ER34Rd6OkCwXBD7SOMB97",
     "artists_id": [
       "0V2DfUrZvBuUReS1LFo5ZI"
     ]
   },
   {
-    "large_image": "ab67616d0000b2730771b564830e3dedb2d31358",
-    "large_text": "Em Trong Đầu",
-    "artists": "Ngọt",
-    "song_name": "Em Trong Đầu",
-    "song_id": "0ON38MgDpAMcRC9ULx7NOf",
-    "duration": 198222,
-    "album_id": "1ZnJrvDY8ih3ppPWR2Tc2a",
+    "large_image": "ab67616d0000b273d888433c9ebc10a6fd994962",
+    "album_name": "Suýt 1",
+    "artists": "Ngọt, Thỏ Trauma",
+    "song_name": "02 Mơ Làm Ma",
+    "song_id": "7Ebm9NxzNhUX2FxzBl1kwm",
+    "duration": 177119,
+    "album_id": "5ER34Rd6OkCwXBD7SOMB97",
     "artists_id": [
-      "0V2DfUrZvBuUReS1LFo5ZI"
+      "0V2DfUrZvBuUReS1LFo5ZI",
+      "2KgvVPpQC2PQR0Vtb1zgT9"
     ]
   }
 ]
