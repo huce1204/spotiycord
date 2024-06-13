@@ -6,9 +6,11 @@ const db = new Collection();
 
 const client = new Client();
 new DiscordStreamClient(client);
+server();
 
 client.on("ready", async () => {
   console.log(`[ready] Logged in as ${client.user.tag}!`);
+
   const voiceChannel = client.channels.cache.get(CHANNEL_ID);
   if (!voiceChannel) return console.error("[error] Voice channel not found!");
   await client.streamClient.joinVoiceChannel(voiceChannel, {
@@ -125,4 +127,15 @@ function playingSong(nowPlaying) {
 async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+function server() {
+  const server = Bun.serve({
+    port: 8080,
+    fetch(req) {
+      return new Response("Welcome to Bun!");
+    },
+  });
+  console.log(`Listening on ${server.url}`);
+}
+
 client.login(process.env.TOKEN);
