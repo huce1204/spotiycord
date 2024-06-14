@@ -1,11 +1,9 @@
 require("dotenv").config();
-const { Client, SpotifyRPC, Collection } = require("discord.js-selfbot-v13");
+const { Client, SpotifyRPC } = require("discord.js-selfbot-v13");
 const { DiscordStreamClient } = require("discord-stream-client");
 const { CHANNEL_ID, SELF_DEAF, SELF_MUTE } = require("./config/config.json");
-const axios = require("axios");
 const fs = require("fs");
 const server = require("./server");
-const db = new Collection();
 
 const client = new Client();
 new DiscordStreamClient(client);
@@ -21,78 +19,10 @@ client.on("ready", async () => {
     selfMute: SELF_MUTE,
     selfVideo: false,
   });
-  db.set("access_token", await getSpotifyToken());
-
+ 
   // Spotify
   await musicPlayer();
 });
-
-client.on("messageCreate", async (message) => {
-  if (message.author.id !== client.user.id) return;
-  if (spotifyURLCheck(message.content)) {
-    let trackId = message.content.match(/track\/([a-zA-Z0-9]{22})/)[1];
-    let access_token = db.get("access_token");
-    let track = await axios.get(
-      `https://api.spotify.com/v1/tracks/${trackId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      }
-    );
-    const { artists, name, album, id, duration_ms } = track.data;
-    let songData = {
-      large_image: getSongImage(album.images[0].url),
-      album_name: album.name,
-      artists: artists.map((artist) => artist.name).join(", "),
-      song_name: name,
-      song_id: id,
-      duration: duration_ms,
-      album_id: album.id,
-      artists_id: artists.map((artist) => getArtistID(artist.uri)),
-    };
-    console.log(`[spotify] Added song: ${songData.song_name}`);
-    let playlist = require("./config/playlist.json");
-    if (!playlist) playlist = [];
-    if (!playlist.find((song) => song.song_id === songData.song_id)) {
-      playlist.push(songData);
-      fs.writeFileSync(
-        "./config/playlist.json",
-        JSON.stringify(playlist, null, 2)
-      );
-    }
-  }
-});
-
-function spotifyURLCheck(url) {
-  return /https?:\/\/open\.spotify\.com\/track\/[a-zA-Z0-9]{22}/.test(url);
-}
-
-function getSongImage(url) {
-  return url.replace(/https:\/\/i\.scdn\.co\/image\//, "");
-}
-
-function getArtistID(uri) {
-  return uri.split(":")[2];
-}
-
-async function getSpotifyToken() {
-  let token = await axios.post(
-    "https://accounts.spotify.com/api/token",
-    new URLSearchParams({
-      grant_type: "client_credentials",
-    }),
-    {
-      headers: {
-        Authorization: `Basic ${Buffer.from(
-          `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-        ).toString("base64")}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    }
-  );
-  return token.data.access_token;
-}
 
 async function musicPlayer() {
   let current_playlist = JSON.parse(
@@ -100,11 +30,6 @@ async function musicPlayer() {
   );
   if (!current_playlist) return;
   while (true) {
-    let isPlaying = db.get("isPlaying");
-    if (!isPlaying) {
-      isPlaying = true;
-      db.set("isPlaying", isPlaying);
-    }
     if (current_playlist.length === 0) {
       current_playlist = JSON.parse(
         fs.readFileSync("./config/playlist.json", "utf-8")
